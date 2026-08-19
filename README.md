@@ -1,66 +1,125 @@
-Numpy-Analyzer
+# NumPy Analyzer
 
-A menu-driven, interactive command-line tool for creating, exploring, and analyzing NumPy arrays. Built entirely with Python and NumPy, it walks you through array creation, indexing/slicing, mathematical operations, combining/splitting, searching/sorting/filtering, and statistical analysis — all through a simple console interface.
+A command-line / Jupyter Notebook tool for creating and exploring NumPy arrays interactively. It lets you build 1D, 2D, or 3D arrays and then run indexing, slicing, mathematical operations, combining/splitting, searching/sorting/filtering, and statistical aggregates on them — all through simple, menu-driven prompts.
 
-Features
-Array Creation — Build 1D, 2D, or 3D arrays by entering custom dimensions and elements
-Indexing & Slicing — Access individual elements or extract sub-arrays across any dimension
-Mathematical Operations — Add, subtract, multiply, or divide two arrays of the same shape
-Combine or Split Arrays — Stack/concatenate arrays together or split an array into multiple parts
-Search, Sort & Filter — Locate values, sort arrays (row-wise for 2D), or filter elements by condition
-Aggregates & Statistics — Compute sum, mean, median, standard deviation, and variance
-Project Structure
- Jupyter/
-│   └── numpy_A.ipynb    # Main notebook containing the NumPy Analyzer program
-└──----- README.md
-Requirements
-Python 3.x
-NumPy
-Installation
-Clone the repository:
+## Table of Contents
 
-git clone https://github.com/pranamiraj083-ship-it/numpy_analyzer.git
-cd Numpy-Analyzer
-Install the required dependency:
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Example Session](#example-session)
+- [Project Structure](#project-structure)
+- [Notes](#notes)
+- [License](#license)
 
-pip install numpy
-Usage
-Open and run Jupyter/numpy_A.ipynb in Jupyter Notebook / JupyterLab, or convert it to a script and run it from the terminal.
+## Features
 
-On launch, you'll see the main menu:
+- **Array Creation** — Build a 1D, 2D, or 3D NumPy array by entering its dimensions and elements.
+- **Indexing & Slicing** — Access single elements or sub-arrays across any supported dimensionality.
+- **Mathematical Operations** — Add, subtract, multiply, or divide your array with another array of the same shape.
+- **Combine or Split Arrays** — Stack/concatenate two arrays together, or split one array into multiple parts.
+- **Search, Sort, and Filter** — Find a value's position, sort the array (row-wise for 2D), or filter elements above a threshold.
+- **Aggregates & Statistics** — Compute sum, mean, median, standard deviation, and variance.
 
-Welcome to the NumPy Analyzer!
-======================================
+## Requirements
 
-Choose an option:
+- Python 3.x
+- [NumPy](https://numpy.org/)
+- Jupyter Notebook (to run the `.ipynb` file)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/pranamiraj083-ship-it/numpy_analyzer.git
+   cd numpy_analyzer
+   ```
+
+2. Install the required dependency:
+
+   ```bash
+   pip install numpy
+   ```
+
+3. (Optional) Install Jupyter if you don't already have it:
+
+   ```bash
+   pip install notebook
+   ```
+
+## Usage
+
+Open and run the notebook:
+
+```bash
+jupyter notebook jupyter/numpy_analyzer.ipynb
+```
+
+Run the cells to launch the interactive menu. You'll be greeted with a main menu:
+
+```
 1. Create a NumPy Array
 2. Perform Mathematical Operations
 3. Combine or Split Arrays
 4. Search, Sort, or Filter Arrays
 5. Compute Aggregates and Statistics
 6. Exit
-Simply enter the number corresponding to the operation you'd like to perform, then follow the on-screen prompts to input array dimensions and values.
+```
 
-Example Workflow
-Select 1 to create a new array (choose 1D, 2D, or 3D and enter its elements)
-Immediately after creation, you can index or slice the array
-Return to the main menu and select 2–5 to perform further operations on the same array
-How It Works
-The program is organized into modular functions, each handling one category of operations:
+Start by choosing **1** to create an array, then use the other options to operate on it. Sub-menus will prompt you for the specific inputs needed (dimensions, elements, index/slice ranges, etc.).
 
-Function	Purpose
-create_array()	Builds a 1D, 2D, or 3D array from user input
-indexing_slicing()	Retrieves elements or sub-arrays via indexing/slicing
-mathematical_operations()	Performs element-wise arithmetic between two arrays
-combine_split()	Combines two arrays or splits one into parts
-search_sort_filter()	Searches, sorts, or filters array values
-aggregates_statistics()	Calculates summary statistics for the array
-main()	Drives the top-level menu loop
-Notes
-2D arrays are sorted row-wise by default.
-When combining two 2D arrays, they are joined using a vertical stack (np.vstack).
-Mathematical operations and combining arrays require the second array to match the shape of the original.
-License
+## Example Session
+
+```
+Enter your choice: 1
+
+Array Creation:
+Select the type of array to create:
+1. 1D Array
+2. 2D Array
+3. 3D Array
+Enter your choice: 1
+
+Enter the number of elements: 5
+Enter 5 elements separated by space: 10 20 30 40 50
+
+Array created successfully:
+[10 20 30 40 50]
+
+Choose an operation:
+1. Indexing
+2. Slicing
+3. Go Back
+Enter your choice: 2
+
+Enter the start index: 1
+Enter the end index: 4
+
+Sliced Array:
+[20 30 40]
+```
+
+## Project Structure
+
+```
+numpy_analyzer/
+└── jupyter/
+    ├── numpy_analyzer.ipynb   # Main notebook containing the interactive analyzer
+    └── README.md              # This file
+```
+
+## Notes
+
+- Mathematical operations and array combining require entering a second array with the same shape as the original.
+- Splitting uses `np.array_split`, so parts may have uneven sizes if the array doesn't divide evenly.
+- Sorting on 2D arrays is applied row-wise.
+
+## License
+
 This project is open source and available for personal and educational use.
 
+## Author
 
+**Repository:** [pranamiraj083-ship-it/numpy_analyzer](https://github.com/pranamiraj083-ship-it/numpy_analyzer.git)
