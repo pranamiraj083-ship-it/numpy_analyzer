@@ -1,5 +1,4 @@
 Numpy-Analyzer
-
 A menu-driven, interactive command-line tool for creating, exploring, and analyzing NumPy arrays. Built entirely with Python and NumPy, it walks you through array creation, indexing/slicing, mathematical operations, combining/splitting, searching/sorting/filtering, and statistical analysis — all through a simple console interface.
 
 Features
@@ -64,4 +63,3 @@ License
 This project is open source and available for personal and educational use.
 
 
-  
